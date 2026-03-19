@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
   --font-base: 'Cormorant Upright', serif;
-  --font-alt: 'Open Sans', sans-serif;
+  --font-alt: 'Montserrat', sans-serif;
   
-  --color-golden: #DCCA87;
-  --color-black: #0C0C0C;
-  --color-gray: #545454;
+  --color-golden: #D4AF37;
+  --color-black: #060606;
+  --color-gray: #3A3A3A;
   --color-crimson: #F5EFDB;
-  --color-grey: #AAAAAA;
-  --color-white: #FFFFFF;
+  --color-grey: #808080;
+  --color-white: #F8F8F8;
 }
 
 * {
@@ -22,6 +22,11 @@
 a {
   color: unset;
   text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-golden) !important;
 }
 
 .slide-bottom {

@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
 import images from '../../constants/images';
+import Reservation from '../Reservation/Reservation';
 import './Navbar.css';
 
 const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = React.useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const [showReservation, setShowReservation] = useState(false);
   return (
+    <>
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <img src={images.gericht} alt="app__logo" />
+        <h1 className="app__logo-text">GOURMANDISE</h1>
       </div>
       <ul className="app__navbar-links">
         <li className="p__opensans"><a href="#home">Home</a></li>
@@ -21,7 +24,7 @@ const Navbar = () => {
       <div className="app__navbar-login">
         <a href="#login" className="p__opensans">Log In / Register</a>
         <div />
-        <a href="/" className="p__opensans">Book Table</a>
+        <a href="#book" className="p__opensans" onClick={(e) => { e.preventDefault(); setShowReservation(true); }}>Book Table</a>
       </div>
       <div className="app__navbar-smallscreen">
       <GiHamburgerMenu color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} />
@@ -39,6 +42,8 @@ const Navbar = () => {
         )}
       </div>
     </nav>
+      {showReservation && <Reservation onClose={() => setShowReservation(false)} />}
+    </>
   );
 };
 

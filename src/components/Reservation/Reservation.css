@@ -1,0 +1,65 @@
+.app__reservation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__reservation-container {
+  background: var(--color-black);
+  border: 1px solid var(--color-golden);
+  padding: 3rem;
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.app__reservation-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: var(--color-golden);
+  font-size: 24px;
+  font-family: var(--font-base);
+  cursor: pointer;
+}
+
+.app__reservation-form {
+  flex-direction: column;
+  width: 100%;
+}
+
+.app__reservation-form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: 1px solid var(--color-golden);
+  border-radius: 5px;
+  color: var(--color-white);
+  font-family: var(--font-alt);
+  font-size: 16px;
+}
+
+.app__reservation-form_row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 650px) {
+  .app__reservation-form_row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
